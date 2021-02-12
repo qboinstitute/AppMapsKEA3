@@ -34,10 +34,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val ubicacion = LatLng(-12.067852, -77.034596)
+        mMap.addMarker(MarkerOptions()
+            .position(ubicacion)
+            .title("Mi marcador")
+            .snippet("Punto de referencia.")
+            .draggable(true))
+        mMap.isTrafficEnabled = true
+        //Cambiar el tipo de MAPA.
+        //mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 16.0F))
     }
 }
