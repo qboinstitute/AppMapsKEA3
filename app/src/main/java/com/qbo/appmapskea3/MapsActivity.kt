@@ -57,6 +57,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     override fun onMarkerDragStart(p0: Marker?) {
         p0!!.hideInfoWindow()
+
     }
 
     override fun onMarkerDrag(p0: Marker?) {
